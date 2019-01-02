@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>新增</title>
+</head>
+<style>
+    input{
+        width: 200px;
+    }
+    label{
+        display: inline-block;
+        width: 100px;
+        margin-right: 15px;
+    }
+</style>
+<body>
+    <div>
+        <form th:action="${action}" method="post">
+            <label>名字：</label><input name="nick_name" th:value="${user.nick_name}"><font color="red" th:errors="${user.nick_name}"></font><br/>
+            <label>序号：</label><input name="id" th:value="${user.id}"><font color="red" th:errors="${user.id}"></font><br/>
+            <label>地址：</label><input name="avatar_url" th:value="${user.avatar_url}"><font color="red" th:errors="${user.avatar_url}"></font><br/>
+            <label>性别：</label><input name="gender" th:value="${user.gender}"><font color="red" th:errors="${user.gender}"></font><br/>
+            <label>opengid:</label><input name="open_id" th:value="${user.open_id}"><font color="red" th:errors="${user.open_id}"></font><br/>
+            <label>标识</label><input name="session_key" th:value="${user.session_key}"><font color="red" th:errors="${user.session_key}"></font><br/>
+            <button type="submit">提交</button>
+        </form>
+    </div>
+</body>
+</html>

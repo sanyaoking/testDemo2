@@ -1,0 +1,16 @@
+1.在使用thymeleaf时，对象的set,get方法必须按规则写。属性id对应的方法必须为getId和setId
+                                               2.spring的数据库用户名设置是spring.datasource.username，而不是spring.datasource.username
+                                               3.mysql存入数据出现乱码，首先查看mysql中字段是否为utf8，如果是则将配置的数据库路径修改为如下字样
+                                               jdbc:mysql://47.74.238.43:3306/hapi_mysql?useUnicode=true&characterEncoding=utf8
+                                               4.mybatis由于选择了启动依赖所以使用mybatis很方便，只需配置数据源即可，如果没有选择mybatis启动依赖，则可以按spring+mybatis整合方式配置
+                                               5.springboot提供了五种异常处理方案
+                                                 5.1 springboot自带方案
+                                                 5.2 @ExceptionHandler
+                                                 5.3 @ControllerAdvice+@ExceptionHandler 针对spring环境下所有的controller抛出的异常
+                                                 5.4 自定义一茶馆
+
+
+
+
+                                               6.表单校验，用的是hibnet的一个工具包。在controller中需要的路径方法的参数前增加@Validated注解，在此参数对象对应的属性中增加
+                                               @NotBlank,@Min(15),Max(30)注解标识需要校验的字段及校验内容和返回信息

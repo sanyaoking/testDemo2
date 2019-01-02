@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    th{
+        border: 1px solid black;
+    }
+    td{
+        border: 1px solid black;
+    }
+</style>
+<body>
+    <table style="border: 1px solid black">
+        <tr style="border: 1px solid black">
+            <th>id</th>
+            <th>姓名</th>
+            <th>创建时间</th>
+            <th>操作</th>
+        </tr>
+        <tr th:each="user : ${users}" style="border: 1px solid black">
+            <td th:text="${user.id}">1</td>
+            <td th:text="${user.nick_name}">Frederic Tomato</td>
+            <td th:text="${#calendars.format(user.created_at,'yyyy-MM-dd')}">13 jan 2011</td>
+            <td><a href="/userController/addUser">新增</a></td>
+        </tr>
+
+    </table>
+</body>
+</html>
